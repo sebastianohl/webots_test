@@ -97,3 +97,9 @@ CardboardBox {
   name "cardbox8"
   size 0.6 0.6 1.2
 }
+Robot {
+  name "Ros2Supervisor"
+  controller "<extern>"
+  supervisor TRUE
+}
+
