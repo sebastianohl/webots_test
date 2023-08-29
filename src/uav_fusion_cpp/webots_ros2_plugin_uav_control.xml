@@ -1,0 +1,9 @@
+<library path="uav_fusion_cpp">
+  <!-- The `type` attribute is a reference to the plugin class. -->
+  <!-- The `base_class_type` attribute is always `webots_ros2_driver::PluginInterface`. -->
+  <class type="webots_ros2_plugin_uav_control::WebotsRos2PluginUAVControl" base_class_type="webots_ros2_driver::PluginInterface">
+    <description>
+      height fusion
+    </description>
+  </class>
+</library>

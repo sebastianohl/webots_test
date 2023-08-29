@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+	"ms-python.python",
+	"ms-vscode.cpptools",
+	"webfreak.debug",
+	"twxs.cmake",
+	"ms-iot.vscode-ros",
+	"ms-vscode.cmake-tools",
+	"xaver.clang-format"
+  ]
+}
+

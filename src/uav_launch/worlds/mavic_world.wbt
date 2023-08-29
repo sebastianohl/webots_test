@@ -1,0 +1,99 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/hokuyo/protos/HokuyoUtm30lx.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/dji/mavic/protos/Mavic2Pro.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/manhole/protos/SquareManhole.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/CardboardBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/SandyGround.proto"
+
+WorldInfo {
+  info [
+    "This demonstration shows a DJI Mavic 2 PRO flying over a rural area by exposing the ROS2 Twist topic."
+  ]
+  title "ROS2 and DJI Mavic 2 PRO demo"
+  basicTimeStep 8
+  defaultDamping Damping {
+    linear 0.5
+    angular 0.5
+  }
+}
+Viewpoint {
+  orientation -0.09292479494503735 -0.0012064933613238063 0.9956723993654698 3.201100558705276
+  position 8.8298891766877 1.02663147100698 2.6296900198889666
+  near 0.2
+  follow "Mavic 2 PRO"
+  followSmoothness 0.2
+}
+TexturedBackground {
+  luminosity 3
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 400 400
+  tileSize 6 6
+  appearance SandyGround {
+  }
+}
+SquareManhole {
+  translation 0 0 -0.03
+  rotation 0 0 1 -1.5707953071795862
+}
+Mavic2Pro {
+  translation 0 0 0.1
+  name "Mavic_2_PRO"
+  controller "<extern>"
+  cameraSlot [
+    HokuyoUtm30lx {
+      rotation 0 1 0 1.5708
+      name "lidar"
+      enablePhysics FALSE
+    }
+    Display {
+      name "grid"
+      width 50
+      height 50
+    }
+  ]
+}
+CardboardBox {
+  translation 0 3 0.3
+  name "cardbox1"
+}
+CardboardBox {
+  translation -2.12 2.12 0.3
+  name "cardbox2"
+  size 0.6 0.6 0.1
+}
+CardboardBox {
+  translation -3 0 0.3
+  name "cardbox3"
+  size 0.6 0.6 1
+}
+CardboardBox {
+  translation -2.12 -2.12 0.3
+  name "cardbox4"
+  size 0.6 0.6 0.9
+}
+CardboardBox {
+  translation 0 -3 0.3
+  name "cardbox5"
+  size 0.6 0.6 0.3
+}
+CardboardBox {
+  translation 2.12 -2.12 0.3
+  name "cardbox6"
+}
+CardboardBox {
+  translation 3 0 0.3
+  name "cardbox7"
+  size 0.6 0.6 0.4
+}
+CardboardBox {
+  translation 2.12 2.12 0.3
+  name "cardbox8"
+  size 0.6 0.6 1.2
+}
