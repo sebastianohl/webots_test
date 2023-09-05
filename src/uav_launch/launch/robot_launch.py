@@ -197,8 +197,9 @@ def generate_launch_description():
     package_dir = get_package_share_directory('uav_launch')
     world = LaunchConfiguration('world')
 
-    ip_address = "141.41.39.177"
-    port = "2002"
+    ip_address = "webots-cloud.ii.svc.cluster.local"
+    port = os.getenv("WEBOTS_PORT")
+
     print(f"tcp://{ip_address}:{port}")
     ros2_supervisor = CloudRos2SupervisorLauncher(
         controller_url_prefix=f"tcp://{ip_address}:{port}/")
